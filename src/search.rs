@@ -21,3 +21,9 @@ fn binary_serach(records: &[Record], target_id: u32)-> Option<&Record> {
     }
     None
 }
+fn binary_search_by_id_std(records: &[Record], target_id: u32) -> Option<&Record> {
+    match records.binary_search_by_key(&target_id, |r| r.id) {
+        Ok(index) => Some(&records[index]),
+        Err(_) => None,
+    }
+}
