@@ -1,4 +1,5 @@
-struct Record {
+#[derive(Debug)]
+pub struct Record {
     id: u32,
     name: String,
 }
