@@ -1,10 +1,10 @@
 #[derive(Debug)]
 pub struct Record {
-    id: u32,
-    name: String,
+    pub id: u32,
+    pub name: String,
 }
 
-fn binary_serach(records: &[Record], target_id: u32)-> Option<&Record> {
+pub fn binary_serach(records: &[Record], target_id: u32)-> Option<&Record> {
     let mut low = 0;
     let mut high = records.len();
 
@@ -22,7 +22,7 @@ fn binary_serach(records: &[Record], target_id: u32)-> Option<&Record> {
     }
     None
 }
-fn binary_search_by_id_std(records: &[Record], target_id: u32) -> Option<&Record> {
+pub fn binary_search_by_id_std(records: &[Record], target_id: u32) -> Option<&Record> {
     match records.binary_search_by_key(&target_id, |r| r.id) {
         Ok(index) => Some(&records[index]),
         Err(_) => None,
