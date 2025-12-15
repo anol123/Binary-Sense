@@ -35,6 +35,8 @@ fn main() {
     //take user input of id they want to search
     //take user input of wheather search or quit
 
+    records.sort_by_key(|record|record.id);
+
     loop {
         println!("Enter an id to search (or 'q' to quit):");
         io::stdout().flush().unwrap();
@@ -51,5 +53,7 @@ fn main() {
             println!("Goodbye!");
             break;
         }
+        
+
     }
 }
