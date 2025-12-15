@@ -6,9 +6,9 @@ pub struct Record {
 
 pub fn binary_serach(records: &[Record], target_id: u32)-> Option<&Record> {
     let mut low = 0;
-    let mut high = records.len();
+    let mut high = records.len()-1;
 
-    while low < high {
+    while low <= high {
         let mid = (low + high) / 2;
         let mid_id = records[mid].id;
 

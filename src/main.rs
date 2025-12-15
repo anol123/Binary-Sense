@@ -30,6 +30,30 @@ fn main() {
             id: 10,
             name: "Eve".to_string(),
         },
+         Record {
+            id: 11,
+            name: "Neeraj".to_string(),
+        },
+         Record {
+            id: 12,
+            name: "PP".to_string(),
+        },
+         Record {
+            id: 13,
+            name: "SDE".to_string(),
+        },
+         Record {
+            id: 14,
+            name: "Evening".to_string(),
+        },
+         Record {
+            id: 17,
+            name: "Amruta Padhi".to_string(),
+        },
+         Record {
+            id: 20,
+            name: "Anol SDE".to_string(),
+        },
     ];
 
     //take user input of id they want to search
@@ -63,19 +87,19 @@ fn main() {
         };
 
         //use custom binary search
-        // let result = binary_serach(&records, target_id);
+        let result = binary_serach(&records, target_id);
         
-        // //Checking the option for some and none
-        // match result{
-        //     Some(record) => println!("Record with id {} found {:?}",target_id,record),
-        //     None => println!("No record found!"),
+        //Checking the option for some and none
+        match result{
+            Some(record) => println!("Record with id {} found {:?}",target_id,record),
+            None => println!("No record found!"),
 
-        // }
-
-        let result = binary_search_by_id_std(&records, target_id);
-        match result {
-            Some(record)=>println!("Record with id {} found {:?}",target_id,record),
-             None => println!("No record found!"),
         }
+
+        // let result = binary_search_by_id_std(&records, target_id);
+        // match result {
+        //     Some(record)=>println!("Record with id {} found {:?}",target_id,record),
+        //      None => println!("No record found!"),
+        // }
     }
 }
