@@ -35,7 +35,7 @@ fn main() {
     //take user input of id they want to search
     //take user input of wheather search or quit
 
-    records.sort_by_key(|record|record.id);
+    records.sort_by_key(|record| record.id);
 
     loop {
         println!("Enter an id to search (or 'q' to quit):");
@@ -53,14 +53,13 @@ fn main() {
             println!("Goodbye!");
             break;
         }
-        
-        let mut target_id: u32= match  trimmed.parse() {
+
+        let mut target_id: u32 = match trimmed.parse() {
             Ok(num) => num,
             Err(_) => {
                 println!("Please enter a valid number or 'q' to quit.\n");
                 continue;
             }
         };
-
     }
 }
