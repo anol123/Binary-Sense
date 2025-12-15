@@ -54,6 +54,13 @@ fn main() {
             break;
         }
         
+        let mut target_id: u32= match  trimmed.parse() {
+            Ok(num) => num,
+            Err(_) => {
+                println!("Please enter a valid number or 'q' to quit.\n");
+                continue;
+            }
+        };
 
     }
 }
