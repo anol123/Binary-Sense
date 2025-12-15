@@ -1,6 +1,6 @@
 use std::io::{self, Write};
 
-use crate::search::Record;
+use crate::search::{Record, binary_search_by_id_std, binary_serach};
 
 mod search;
 
@@ -20,7 +20,7 @@ fn main() {
         },
         Record {
             id: 5,
-            name: "Charlie".to_string(),
+            name: "Amruta".to_string(),
         },
         Record {
             id: 7,
@@ -61,5 +61,21 @@ fn main() {
                 continue;
             }
         };
+
+        //use custom binary search
+        // let result = binary_serach(&records, target_id);
+        
+        // //Checking the option for some and none
+        // match result{
+        //     Some(record) => println!("Record with id {} found {:?}",target_id,record),
+        //     None => println!("No record found!"),
+
+        // }
+
+        let result = binary_search_by_id_std(&records, target_id);
+        match result {
+            Some(record)=>println!("Record with id {} found {:?}",target_id,record),
+             None => println!("No record found!"),
+        }
     }
 }
