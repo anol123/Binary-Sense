@@ -4,6 +4,15 @@ pub struct Record {
     pub name: String,
 }
 
+impl Record{
+    fn new(id :u32, name:impl Into<String>) -> Self{
+        Self{
+            id,
+            name: name.into(),
+        }
+    }
+}
+
 pub fn binary_serach(records: &[Record], target_id: u32)-> Option<&Record> {
     let mut low = 0;
     let mut high = records.len()-1;
