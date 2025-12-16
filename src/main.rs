@@ -6,54 +6,18 @@ mod search;
 
 fn main() {
     let mut records = vec![
-        Record {
-            id: 1,
-            name: "Anol".to_string(),
-        },
-        Record {
-            id: 2,
-            name: "Alice".to_string(),
-        },
-        Record {
-            id: 3,
-            name: "Bob".to_string(),
-        },
-        Record {
-            id: 5,
-            name: "Amruta".to_string(),
-        },
-        Record {
-            id: 7,
-            name: "David".to_string(),
-        },
-        Record {
-            id: 10,
-            name: "Eve".to_string(),
-        },
-         Record {
-            id: 11,
-            name: "Neeraj".to_string(),
-        },
-         Record {
-            id: 12,
-            name: "PP".to_string(),
-        },
-         Record {
-            id: 13,
-            name: "SDE".to_string(),
-        },
-         Record {
-            id: 14,
-            name: "Evening".to_string(),
-        },
-         Record {
-            id: 17,
-            name: "Amruta Padhi".to_string(),
-        },
-         Record {
-            id: 20,
-            name: "Anol SDE".to_string(),
-        },
+        Record::new(1, "Anol"),
+        Record::new(2, "Alice"),
+        Record::new(3, "Bob"),
+        Record::new(5, "Amruta"),
+        Record::new(7, "David"),
+        Record::new(10, "Eve"),
+        Record::new(11, "Niraj"),
+        Record::new(12, "Sayan"),
+        Record::new(13, "Amruta Padhi"),
+        Record::new(14, "Rohit"),
+        Record::new(17, "PP"),
+        Record::new(20, "Anol SDE"),
     ];
 
     //take user input of id they want to search
@@ -88,12 +52,11 @@ fn main() {
 
         //use custom binary search
         let result = binary_serach(&records, target_id);
-        
-        //Checking the option for some and none
-        match result{
-            Some(record) => println!("Record with id {} found {:?}",target_id,record),
-            None => println!("No record found!"),
 
+        //Checking the option for some and none
+        match result {
+            Some(record) => println!("Record with id {} found {:?}", target_id, record),
+            None => println!("No record found!"),
         }
 
         // let result = binary_search_by_id_std(&records, target_id);

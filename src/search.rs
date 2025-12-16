@@ -5,7 +5,7 @@ pub struct Record {
 }
 
 impl Record{
-    fn new(id :u32, name:impl Into<String>) -> Self{
+    pub fn new(id :u32, name:impl Into<String>) -> Self{
         Self{
             id,
             name: name.into(),
