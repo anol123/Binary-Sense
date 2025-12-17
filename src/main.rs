@@ -3,6 +3,7 @@ use std::io::{self, Write};
 use crate::search::{Record, binary_search_by_id_std, binary_serach};
 
 mod search;
+mod loader;
 
 fn main() {
     let mut records = vec![
