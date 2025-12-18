@@ -1,4 +1,4 @@
-use std::error::Error;
+use std::{error::Error, fs::File};
 
 use crate::search::Record;
 
