@@ -1,4 +1,5 @@
 #[derive(Debug)]
+#[derive(serde::Deserialize)]
 pub struct Record {
     pub id: u32,
     pub name: String,
