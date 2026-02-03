@@ -7,12 +7,12 @@ use crate::search::Record;
 pub fn load_records_from_csv(path: &str) -> Result<Vec<Record>, Box<dyn Error>> {
     let file = File::open(path)?;
     let mut reader = ReaderBuilder::new().trim(csv::Trim::All).from_reader(file);
-    let mut records = Vec::new();
+    let mut records_vec = Vec::new();
 
     for result in reader.deserialize() {
         let record: Record = result?;
-        records.push(record);
+        records_vec.push(record);
     }
 
-    Ok(records)
+    Ok(records_vec)
 }
