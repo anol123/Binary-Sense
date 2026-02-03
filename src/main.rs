@@ -1,9 +1,12 @@
 use std::io::{self, Write};
 
-use crate::{loader::load_records_from_csv, search::{Record, binary_search_by_id_std}};
+use crate::{
+    loader::load_records_from_csv,
+    search::{Record, binary_search_by_id_std},
+};
 
-mod search;
 mod loader;
+mod search;
 
 // fn main() {
 //     let mut records = vec![
@@ -68,7 +71,6 @@ mod loader;
 //     }
 // }
 
-
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let mut records = load_records_from_csv("data/records.csv")?;
 
@@ -80,7 +82,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let search_id = 7;
     match binary_search_by_id_std(&records, search_id) {
         Some(record) => println!("Found: {:?}", record),
-        None => println!("Record not found"),
+        None => println!("Record not found!Enter a valid search id"),
     }
 
     Ok(())
